@@ -1,0 +1,7 @@
+﻿::deep :root {
+    --mud-palette-primary-rgb: rgba(255,255,255,.12);
+    --mud-palette-primary-hover: rgba(255,255,255,.12);
+}
+body{
+    color:aqua;
+}

@@ -1,0 +1,19 @@
+﻿@inherits LayoutComponentBase
+@inject IJSRuntime JS
+
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+<MudLayout>
+    <AppBar OnSidebarToggled="DrawerToggle" OnThemeToggled="ToggleTheme"
+        OnDarkModeChanged="ChangeDarkMode" IsMobile="@_isMobile" IsDarkMode="@_isLDarkMode" />
+    <MudDrawer @bind-Open="_drawerOpen" Elevation="1" ClipMode="DrawerClipMode.Always" Breakpoint="Breakpoint.Sm" PreserveOpenState="false" Variant="@_variant">
+        <NavMenu />
+    </MudDrawer>
+    <MudMainContent>
+        <MudContainer MaxWidth="MaxWidth.Large" Class="my-16 pt-16">
+            @Body
+        </MudContainer>
+    </MudMainContent>
+</MudLayout>
+<MudThemeProvider  @ref="@_mudThemeProvider" Theme="_currentTheme" IsDarkMode="_isLDarkMode"/>
